@@ -11,28 +11,28 @@ body {
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 3rem;
+  font-weight: 300;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
 
-.associated-word {
+.materialize-pink {
+  color: #ee6e73;
+}
+
+.list-item {
   border: .05rem solid black;
-  padding: .1rem .3rem .1rem .3rem;
-  margin: .1rem;
-  border-radius: 1.3rem;
+  margin: .5rem .5rem 0 0;
+  border-radius: .2rem;
+  padding-left: .1rem;
+  padding-right: .1rem;
 }
 
-.grouping {
-  font-weight:bold;
-}
-
-.flex {
+.flex-row {
   display: flex;
-  flex-direction: row;	
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
 	align-items: stretch;
 	align-content: stretch;
 }
@@ -43,42 +43,28 @@ h1 {
 
 textarea {
   resize: none;
-  height: 15rem;
-  width: 100%;
-}
-
-.downward-arrow {
-  font-size: 7rem;
-}
-.item {
-  flex-grow: 1;
-  width: 100%;
+  border: .15rem solid #4db6ac;
+  height: 14rem;
 }
 
 .center {
   text-align: center;
 }
 
-.margin-1rem {
-  margin: 1rem
+
+.empty-list {
+  color: lightgrey;
 }
 
-.word-list {
-  overflow: hidden;
-}
-
-.space-between {
-  display: flex;
-  justify-content: space-between;
+.solution-words {
+  overflow-x: scroll;
+  line-height: 2.5rem;
 }
 
 .loading {
   font-size: 30px;
 }
 
-.weight {
-  font-size: .7rem;
-}
 .loading:after {
   content: "...";
   overflow: hidden;
@@ -88,21 +74,6 @@ textarea {
   animation-fill-mode: fowards;
   width: 1.25em;
 }
-
-.empty-list {
-  color: lightgrey;
-}
-
-.buttons {
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: stretch;
-  align-content: stretch;
-  width: 101%;
-}
-
 @keyframes ellipsis-dot {
   25% {
     content: "";
@@ -116,4 +87,40 @@ textarea {
   100% {
     content: "...";
   }
+}
+
+.color-0 {
+  color: #e1bee7;
+}
+
+.color-1 {
+  color: #ce93d8;
+}
+
+.color-2 {
+  color: #ba68c8;
+}
+
+.color-3 {
+  color: #ba68c8;
+}
+
+.color-4 {
+  color: #ab47bc;
+}
+
+.color-5 {
+  color: #9c27b0;
+}
+
+.color-6 {
+  color: #7b1fa2;
+}
+
+.color-7 {
+  color: #6a1b9a;
+}
+
+.color-8 {
+  color: #4a148c;
 }

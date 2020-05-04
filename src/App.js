@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { initial } from './data/solution'
-function App() {
+import { initial } from "./data/solution";
+const App = () => {
   const [solutions, setSolutions] = useState(initial.solution);
   const [textArea, setTextArea] = useState(initial.words);
   const [words, setWords] = useState(initial.words.split(" "));
@@ -21,72 +21,71 @@ function App() {
       .then(res => setSolutions(res.data));
   };
   return (
-    <div className="flex">
-      <div>
-        <div className="flex">
-          <h1>codenamer</h1>
+    <div className="container">
+      <div className="row">
+        <div className="col s12">
+          <h1 className="header center-align materialize-pink">codenamer</h1>
+          <p>
+            Codenames is a board game where a single clue/word is used to tie
+            multiple words together.
+          </p>
+          <p>This application uses word association to generate codenames.</p>
         </div>
-        <div>
-          Selected words go into the text area below. Words are distuingished by spacing. 
-          <div className="flex">
-          <div className='item downward-arrow center'>&#8595;</div> 
-          <div className='item'>A list of associated words shared by </div>
+      </div>
+      <div className="row">
+        <div className="col s6">
+          <textarea value={textArea} onChange={e => handleTextAreaChange(e)} />
+          <div>
+            <a
+              value="clear"
+              className="waves-effect waves-light btn-small left"
+              onClick={() => {
+                setTextArea("");
+                setWords([]);
+              }}
+            >
+              Clear
+            </a>
+            <a
+              className="waves-effect waves-light btn-small right"
+              onClick={() => handleSubmit()}
+            >
+              Submit
+            </a>
           </div>
         </div>
-        <div className="flex">
-          <div className="item margin-1rem">
-            <textarea
-              value={textArea}
-              onChange={e => handleTextAreaChange(e)}
-            />
-            <div className="buttons">
-              <input
-                className="item"
-                type="button"
-                value="clear"
-                onClick={() => setTextArea("")}
-              />
-              <input
-                className="item float-right"
-                type="button"
-                value="submit"
-                onClick={() => handleSubmit()}
-              />
-            </div>
-          </div>
-          <div className="item margin-1rem">
-            {textArea === "" ? (
-              <div className="loading"></div>
-            ) : (
-              words.map((w, i) => (
-                <div className="word-list">
-                  <span className="bold">{i + 1})</span> {w}
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-        <div>
-          {Object.entries(solutions).map(solution => (
+
+        <div className="col s6">
+          {words.map((w, i) => (
             <div>
+              <span className={"bold color-" + i}>{i + 1}) </span>
+              {w}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s12 solutions">
+          {Object.entries(solutions).map(solution => (
+            <div className='solution'>
               <div
                 className={
-                  solution[1].length === 0 ? "grouping empty-list" : "grouping"
+                  solution[1].length === 0 ? "bold empty-list" : "bold"
                 }
               >
                 {solution[0]}
               </div>
+              {solution[1].length > 0 && <div className="solution-words">
               {solution[1].map(s => (
-                <div>
-                  {s.item}
-                </div>
+                <span className='list-item'>{s.item}</span>
               ))}
+              </div>}
             </div>
           ))}
-        </div>{" "}
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
