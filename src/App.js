@@ -39,11 +39,11 @@ const App = () => {
             <span className="materialize-pink">namer</span>
           </h1>
           <p className="center">
-            Codenames is a board game where a single clue/word is used to tie
+            Codenames is a board game where a single word is used to tie
             multiple words together.
           </p>
           <p className="center">
-            This application uses word association to generate codenames.
+            This application uses word association to generate clues.
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ const App = () => {
         <div className="col s6">
           <div className="center">
             <span className="materialize-green bold">desired</span> words
-            <div className="small">(required)</div>
+            <div className="small">required</div>
           </div>
           <textarea
             className="good-textarea"
@@ -70,7 +70,7 @@ const App = () => {
         <div className="col s6">
           <div className="center">
             words to <span className="materialize-pink bold">avoid</span>
-            <div className="small">(optional)</div>
+            <div className="small">optional</div>
           </div>
           <textarea
             className="bad-textarea"
@@ -101,9 +101,7 @@ const App = () => {
         </div>
         <div className="col s6 row">
           {avoids.map((w, i) => (
-            <div className={"col s12 m4 circle round bold avoid-" + i}>
-              {w}
-            </div>
+            <div className={"col s12 m4 circle round bold avoid-" + i}>{w}</div>
           ))}
         </div>
       </div>
@@ -128,6 +126,12 @@ const App = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="center footer">
+        <a target="_blank" href="https://www.github.com/miles-moran">
+          <span className="materialize-green">github.com</span>{" "}
+          <span className="materialize-pink">miles-moran</span>
+        </a>
       </div>
     </div>
   );
