@@ -1,5 +1,6 @@
 export const initial = {
   words: "grape garden apple",
+  avoids: "agilists",
   solution: {
     "grape garden apple ": [],
     "grape garden ": [
