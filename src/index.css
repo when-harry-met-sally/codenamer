@@ -85,6 +85,15 @@ textarea {
   margin-top: 7.5rem;
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.result-log {
+  border: .15rem solid #b19cd9;
+  background-color: #eee6ff;
+}
+
 @keyframes ellipsis-dot {
   25% {
     content: "";

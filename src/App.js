@@ -45,6 +45,9 @@ const App = () => {
           <p className="center">
             This application uses word association to generate clues.
           </p>
+            <p className="center">
+                how why
+            </p>
         </div>
       </div>
       <div className="row">
@@ -53,6 +56,9 @@ const App = () => {
             <span className="materialize-green bold">desired</span> words
             <div className="small">required</div>
           </div>
+            <div className="progress white">
+                <div className="indeterminate"></div>
+            </div>
           <textarea
             className="good-textarea"
             value={wordArea}
@@ -72,6 +78,9 @@ const App = () => {
             words to <span className="materialize-pink bold">avoid</span>
             <div className="small">optional</div>
           </div>
+            <div className="progress white rotate-180">
+                <div className="indeterminate"></div>
+            </div>
           <textarea
             className="bad-textarea"
             value={avoidArea}
@@ -105,6 +114,44 @@ const App = () => {
           ))}
         </div>
       </div>
+        <div className="row">
+            <div className="col s6 result-log">
+                <div className="bold">
+                    Result Log
+                </div>
+               <div className="row">
+                   <div className="col s6">
+                       APIs:
+                       <br/>
+
+                       API Calls:
+                       <br/>
+                       Python cross-referencing:
+                       <br/>
+
+                   </div>
+                   <div className="col s6">
+                       Datamuse
+                       <br/>
+                       4 seconds
+                       <br/>
+                        .22 seconds
+                   </div>
+
+               </div>
+                <div className="bold">
+                    Results
+                </div>
+        <div className="row">
+                    <div className='col s6'>
+                        14 Successful Groupings
+                    </div>
+                <div className='col s6'>
+                    14 Failed Groupings
+                </div>
+            </div>
+        </div>
+        </div>
       <div className="row">
         <div className="col s12 solutions">
           {Object.entries(solutions).map(solution => (
